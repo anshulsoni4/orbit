@@ -1,0 +1,112 @@
+/* orbital animation */ 
+
+@keyframes starpulse {
+	from {opacity: 1;}
+	to {opacity: 0.2;}
+
+}
+
+
+@keyframes sunfire {
+	from {
+		box-shadow: 0 0 20px #f5c91a;
+	}
+	to{
+		box-shadow: 0 0 150px #f5c91a;
+	}
+}
+
+@keyframes spin {
+	from {transform: rotate(0);}
+	to {transform: rotate(360deg);}
+}
+
+
+
+
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+#universe {
+	background: black;
+	background: -webkit-radial-gradient(#555, #000);
+	background: -radial-gradient(#555, #000);
+}
+
+#stars { 
+	position: relative;
+	z-index: 2;
+	height: 100%;
+	width: 100%;
+	background: url(images/stars.png);
+	animation: starpulse 1s infinite alternate;
+}
+
+#sun {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 200px;
+	width: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+	background: orange;
+	background: -webkit-radial-gradient(#f5c313, #ec7e08);
+	border-radius: 100%;
+	-webkit-box-shadow:  0 0 300px #f5c91a;
+	animation: sunfire 2s infinite alternate;
+}
+
+#earthorbit {
+	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -300px;
+	margin-left: -300px;
+	z-index: 4;
+	height: 600px;
+	width: 600px;
+
+	-webkit-border-radius: 100%;
+
+	animation: spin 30s linear infinite;
+}
+
+#earth {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -40px;
+	animation: spin 15s linear infinite;
+}
+
+#moonorbit {
+	
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	z-index: 4;
+	top: 50%;
+	left: -20px;
+	margin-top: -60px;
+	-webkit-border-radius: 100%;
+	-webkit-animation: spin 5s linear infinite reverse;
+}
+	
+#moon {
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	top: 38%;
+	left: -6%;
+	
+
+	background: gray;
+	background: -webkit-radial-gradient(#ddd, #888);
+
+	-webkit-border-radius: 100%;
+}
